@@ -1,0 +1,20 @@
+<mat-card class="container center">
+  <form class='login-form' [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+    <mat-form-field appearance="fill">
+      <mat-label>Email address</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="Enter email">
+      <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['required']">
+        Please enter email address.!
+      </mat-error>
+      <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['email']">
+        Email address not well formed.!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" placeholder="Password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+</mat-card>

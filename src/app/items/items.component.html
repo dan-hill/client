@@ -1,0 +1,26 @@
+<mat-toolbar class="items-toolbar mat-accent">
+  <span>Items</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<mat-card class="search-card">
+  <mat-card-content>
+    <mat-selection-list>
+
+    </mat-selection-list>
+  </mat-card-content>
+</mat-card>
+<mat-card class="items-card">
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let item of items">
+        <mat-icon matListItemIcon>folder</mat-icon>
+        <h3 matListItemTitle>{{item['name']}}</h3>
+        <p matListItemLine>
+          <span>{{item['name']}}</span>
+          <span class="demo-2"> -- {{item['name']}}</span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+</mat-card>
